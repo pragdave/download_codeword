@@ -2,6 +2,9 @@ defmodule DownloadCodeword do
 
   import String, only: [from_char_list!: 1]
 
+  def start(_,_) do
+    { :ok, self }
+  end
 
   def main([yyyy, mm, dd]) do
 
