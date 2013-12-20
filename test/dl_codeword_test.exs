@@ -1,4 +1,4 @@
-defmodule DlCodewordTest do
+defmodule DownloadCodewordTest do
   use ExUnit.Case
 
   test "the truth" do

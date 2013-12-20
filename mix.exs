@@ -1,18 +1,18 @@
-defmodule DlCodeword.Mixfile do
+defmodule DownloadCodeword.Mixfile do
   use Mix.Project
 
   def project do
-    [ app: :dl_codeword,
+    [ app: :download_codeword,
       version: "0.0.1",
       elixir: "~> 0.11",
-      escript_main_module: DlCodeword,
+      escript_main_module: DownloadCodeword,
       deps: deps ]
   end
 
   # Configuration for the OTP application
   def application do
     [
-      mod:          { DlCodeword, [] },
+      mod:          { DownloadCodeword, [] },
       applications: [ :httpotion ] 
     ]
   end

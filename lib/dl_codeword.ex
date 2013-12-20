@@ -1,15 +1,7 @@
-defmodule DlCodeword do
-
-  use Application.Behaviour
+defmodule DownloadCodeword do
 
   import String, only: [from_char_list!: 1]
 
-
-  # See http://elixir-lang.org/docs/stable/Application.Behaviour.html
-  # for more information on OTP Applications
-  def start(_type, _args) do
-    DlCodeword.Supervisor.start_link
-  end
 
   def main([yyyy, mm, dd]) do
 
@@ -19,6 +11,7 @@ defmodule DlCodeword do
     << %s{var CrosswordPuzzleData = \"} <> xml >> = body
     xml = Regex.replace(%r/\";\z/, xml, "")
     xml = Regex.replace(%r/\\\"/, xml, "\"")
+
     {:ok, {_, hints}, _} = :erlsom.parse_sax(xml, {_cells = HashDict.new, _hints = HashDict.new}, &handler/2)
     hints |> Enum.each(fn {code, letter} -> IO.puts "#{code}=#{letter}" end)
   end

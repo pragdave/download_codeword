@@ -32,7 +32,7 @@ $ mix escriptize
 ## Running the Program
 
 ``` 
-$ ./dl_codeword yyyy mm dd >puzzle.cw
+$ ./download_codeword yyyy mm dd >puzzle.cw
 ```
 
 where _yyyy_, _mm_, and _dd_ are the date of the puzzle.
